@@ -22,6 +22,10 @@ class Game:
         self.time_left_rect = self.time_left_text.get_rect()
         self.time_left_rect.center = self.screen.get_rect().center
 
+        self.clock_image = pygame.image.load("clock.png")
+        self.clock_rect = self.clock_image.get_rect()
+        self.clock_rect.center = self.screen.get_rect().center 
+
         self.tip_rect.centerx = self.time_left_rect.centerx
         self.tip_rect.bottom = self.time_left_rect.top - 10
 
@@ -57,6 +61,7 @@ class Game:
 
     def draw(self):
         self.screen.fill((255, 255, 255))
+        self.screen.blit(self.clock_image, self.clock_rect)
         self.screen.blit(self.time_left_text, self.time_left_rect)
         self.screen.blit(self.tip, self.tip_rect)
         pygame.display.flip()
