@@ -23,6 +23,7 @@ class Game:
         self.time_left_rect.center = self.screen.get_rect().center
 
         self.clock_image = pygame.image.load("clock.png")
+        self.clock_image = pygame.transform.scale(self.clock_image, (400, 400))
         self.clock_rect = self.clock_image.get_rect()
         self.clock_rect.center = self.screen.get_rect().center 
 
